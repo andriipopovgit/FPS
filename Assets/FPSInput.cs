@@ -15,11 +15,16 @@ public class FPSInput : MonoBehaviour
     
     void Update()
     {
-        float deltaX = Input.GetAxis("Horizontal") * speed;
-        float deltaZ = Input.GetAxis("Vertical") * speed;
+        float currentSpeed = speed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            currentSpeed /= 2;
+        }
+        float deltaX = Input.GetAxis("Horizontal") * currentSpeed;
+        float deltaZ = Input.GetAxis("Vertical") * currentSpeed;
 
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
-        movement = Vector3.ClampMagnitude(movement, speed);
+        movement = Vector3.ClampMagnitude(movement, currentSpeed);
         movement.y = gravity;
 
         movement *= Time.deltaTime;

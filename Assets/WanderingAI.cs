@@ -46,8 +46,15 @@ public class WanderingAI : MonoBehaviour
         }
     }
 
-    public void SetAlive(bool alive)
+    public bool Alive
     {
-        _alive = alive;
+        get
+        {
+            return _alive;
+        }
+        set
+        {
+            _alive = value;
+        }
     }
 }

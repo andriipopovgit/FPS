@@ -15,15 +15,24 @@ public class Fireball : MonoBehaviour
     void Update()
     {
         transform.Translate(0, 0, speed * Time.deltaTime);
+        if (transform.position.y > 30)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
         PlayerCharacter player = other.GetComponent<PlayerCharacter>();
+        ReactiveTarget target = other.GetComponent<ReactiveTarget>();
         if (player != null)
         {
             Debug.Log("Player hit");
             player.Hurt(damage);
+        }
+        else if (target != null)
+        {
+            target.ReactToHit();
         }
         Destroy(this.gameObject);
     }

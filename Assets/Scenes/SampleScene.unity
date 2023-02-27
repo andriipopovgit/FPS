@@ -817,6 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d8c6591e0aeff4fa19c4ff923eee84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireballPrefab: {fileID: 3575307328129220576, guid: cfab1df365df2b04ab991853a4d5dfbe, type: 3}
 --- !u!1 &1026991466
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560a672a4372d0343879d96b5b016a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 5
 --- !u!1 &1195324187
 GameObject:
   m_ObjectHideFlags: 0
